@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body  style="background-color: rgb(114, 165, 233);">
+<h1>Check your mark</h1>
+<input id="log" type="text" >
+<button onclick="myfunc()">ok</button>
+<p id="p1"></p>
+
+
+        <script>
+            function myfunc(){
+                const message=document.getElementById("p1");
+                message.innerHTML="";
+                let p1 =document.getElementById("log").value;
+        try { 
+               if(p1.trim()=="")throw"empty";
+               if(isNaN(p1)) throw"not a number , tray agin";
+               if(p1>10) throw "pass";
+               if (p1<10) throw"fail";
+               if (p1=10) throw"pass";
+        
+        } catch  (error) {
+            message.innerHTML="Your are "+error;
+        }
+            }
+        </script>
+        <ul>
+            <li>grater than 10, pass</li>
+            <li>lower than 10, fail</li>
+        </ul>
+    </body>
+</html>
